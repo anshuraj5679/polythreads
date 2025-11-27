@@ -25,10 +25,11 @@ export default function PostPage() {
     abi: POLYTHREADS_ABI,
     functionName: "getPost",
     args: post?.blockchain_post_id ? [BigInt(post.blockchain_post_id)] : undefined,
-  });
+  }) as { data: readonly [string, string, bigint, bigint, bigint] | undefined };
 
   useEffect(() => {
     fetchPost();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [postId]);
 
   async function fetchPost() {

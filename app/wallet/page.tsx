@@ -61,7 +61,7 @@ export default function WalletPage() {
                 <div className="flex items-center justify-between">
                   <div>
                     <div className="text-sm text-foreground/60 mb-1">Wallet Address</div>
-                    <div className="font-mono text-lg font-semibold">{shortenAddress(address)}</div>
+                    <div className="font-mono text-lg font-semibold">{address ? shortenAddress(address) : ''}</div>
                   </div>
                   <a
                     href={`https://amoy.polygonscan.com/address/${address}`}

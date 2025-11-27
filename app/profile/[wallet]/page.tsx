@@ -31,6 +31,7 @@ export default function ProfilePage() {
 
   useEffect(() => {
     fetchProfile();
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [wallet, address]);
 
   async function fetchProfile() {
@@ -191,7 +192,7 @@ export default function ProfilePage() {
                   <h1 className="text-2xl font-bold flex items-center space-x-2">
                     <span>{displayName}</span>
                     {posts.some(p => p.blockchain_post_id) && (
-                      <Shield className="w-5 h-5 text-primary" title="Verified on blockchain" />
+                      <Shield className="w-5 h-5 text-primary" aria-label="Verified on blockchain" />
                     )}
                   </h1>
                   <p className="text-foreground/60">{shortenAddress(wallet)}</p>
