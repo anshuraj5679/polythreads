@@ -86,6 +86,27 @@ npm start
 
 If it works locally, it will work on Vercel.
 
+## Important: Vercel Project Settings
+
+If you still get "Couldn't find any pages or app directory" error:
+
+1. **Check Root Directory in Vercel Dashboard**:
+   - Go to Project Settings → General
+   - Ensure "Root Directory" is set to `./` (project root)
+   - NOT set to any subdirectory
+
+2. **Framework Preset**:
+   - Should auto-detect as "Next.js"
+   - If not, manually select "Next.js" in settings
+
+3. **Build Settings**:
+   - Build Command: `npm run build` (or leave empty for auto-detect)
+   - Output Directory: `.next` (or leave empty for auto-detect)
+   - Install Command: `npm install` (or leave empty for auto-detect)
+
+4. **Redeploy**:
+   - After changing settings, click "Redeploy" from Deployments tab
+
 ---
 
 **Need Help?**
